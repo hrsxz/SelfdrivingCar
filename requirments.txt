@@ -1,0 +1,13 @@
+Keras==2.8.0
+numpy==1.26.2
+PyYAML==6.0.1
+scipy==1.11.4
+python-engineio==3.13.0
+python-socketio==4.6.1
+flask==2.0.2
+h5py==3.6.0
+opencv-python
+eventlet
+pillow
+tensorflow==2.8.0
+protobuf==3.20.*

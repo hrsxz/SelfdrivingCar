@@ -3,7 +3,7 @@ import base64
 from datetime import datetime
 import os
 import shutil
-# import cv2
+import cv2
 
 import numpy as np
 import socketio
@@ -49,6 +49,15 @@ set_speed = 9
 controller.set_desired(set_speed)
 
 
+def img_preprocess(img):
+    img = img[60:135, :, :]
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2YUV)
+    img = cv2.GaussianBlur(img,  (3, 3), 0)
+    img = cv2.resize(img, (200, 66))
+    img = img/255
+    return img
+
+
 @sio.on('telemetry')
 def telemetry(sid, data):
     if data:
@@ -62,8 +71,8 @@ def telemetry(sid, data):
         imgString = data["image"]
         image = Image.open(BytesIO(base64.b64decode(imgString)))
         image_array = np.asarray(image)
-        # resized_image = cv2.resize(image_array, (200, 66))
-        steering_angle = float(model.predict(image_array[None, :, :, :], batch_size=1))
+        preprocessed_image = img_preprocess(image_array)
+        steering_angle = float(model.predict(preprocessed_image[None, :, :, :], batch_size=1))
 
         throttle = controller.update(float(speed))
 

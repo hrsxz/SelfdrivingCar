@@ -28,15 +28,18 @@ project.
 
 ## ✅ Quickstart for this project
 
-1. Install CUDA and cuDNN
+1. Install CUDA and cuDNN, please refer to the following links:
+
    <https://blog.csdn.net/anmin8888/article/details/127910084>
 
    <https://developer.nvidia.com/cuda-11-7-0-download-archive>
 
    <https://developer.nvidia.com/rdp/cudnn-download>
 
-    Install folder path is `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7`
-2. Install all dependencies
+    Install folder path for cuda is
+
+    `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7`
+2. Create your own virtual enviroment and install all dependencies
 
    `pip install -r requirements.txt`
 3. Activate the virtual environment, in this project, I use the virtual   environment created by python. Python located at venv_self_driving_car/scripts/python.exe, use activate.bat to activate the virtual environment.
@@ -46,10 +49,10 @@ project.
 
    `python drive.py model.h5`
 5. Run the simulator in autonomous mode, which could be downloaded from <https://github.com/udacity/self-driving-car-sim>
-6. 
-![Alt text](miscellaneous/images/downloadlinksimulator.png)
 
-![Alt text](miscellaneous/images/simulator.png)
+   ![Alt text](miscellaneous/images/downloadlinksimulator.png)
+
+   ![Alt text](miscellaneous/images/simulator.png)
 
 ## Reference
 

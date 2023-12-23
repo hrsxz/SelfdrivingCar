@@ -11,7 +11,8 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["${workspaceFolder}/model/model.h5"]
+            "args": ["${fileDirname}/../model/model.h5",
+                     "${fileDirname}/../model/run1"]
         }
     ]
 }

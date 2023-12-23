@@ -3,3 +3,5 @@
 /venv_auto_car
 /venv_self_driving_car
 /data/metadata.zip
+/model/run1
+/model/*.mp4
